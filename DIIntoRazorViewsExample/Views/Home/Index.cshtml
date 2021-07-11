@@ -1,8 +1,13 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model Cat
+@inject ICatService CatsNames
+@{
+    ViewData["Title"] = "Injecting Services into ASP.NET Core Razor Views";
+    var cat = CatsNames.GetName();
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div class="text-center">
+        <h1 class="display-4">Your cat name is @cat.Name</h1>
+    </div>
 </div>
